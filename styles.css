@@ -1,5 +1,3 @@
-/* Base styles */
-
 * {
     margin: 0;
     padding: 0;
@@ -277,7 +275,7 @@ header {
 }
 
 
-/* Memory section */
+/* Memory section - UPDATED FOR PHONE IMAGES */
 
 .memory-section {
     margin: 40px 0;
@@ -306,7 +304,8 @@ header {
 
 .memory-card {
     flex: 0 0 280px;
-    height: 350px;
+    height: 400px;
+    /* Increased height to accommodate phone-sized photos */
     background: white;
     border-radius: 12px;
     scroll-snap-align: center;
@@ -314,7 +313,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     position: relative;
@@ -327,8 +326,9 @@ header {
 }
 
 .memory-placeholder {
-    width: 240px;
-    height: 200px;
+    width: 100%;
+    height: 320px;
+    /* Taller to accommodate phone aspect ratio */
     background: #f5f5f5;
     border-radius: 8px;
     display: flex;
@@ -357,14 +357,22 @@ header {
 .memory-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    /* Changed from cover to contain to show full image */
+    border-radius: 8px;
 }
 
 .memory-title {
     font-weight: bold;
     color: #e91e63;
     margin: 10px 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    /* Slightly smaller to fit longer titles */
+    text-align: center;
+    max-width: 250px;
+    /* Limit width for better readability */
+    overflow-wrap: break-word;
+    /* Allow long words to break */
 }
 
 .memory-date {
@@ -637,9 +645,13 @@ footer {
     }
     .memory-card {
         flex: 0 0 260px;
+        height: 380px;
+        /* Adjusted height for medium screens */
     }
     .memory-placeholder {
-        width: 220px;
+        width: 100%;
+        height: 300px;
+        /* Adjusted height for medium screens */
     }
 }
 
@@ -655,10 +667,12 @@ footer {
     }
     .memory-card {
         flex: 0 0 220px;
-        height: 320px;
+        height: 360px;
+        /* Adjusted height for small screens */
     }
     .memory-placeholder {
-        width: 180px;
-        height: 180px;
+        width: 100%;
+        height: 280px;
+        /* Adjusted height for small screens */
     }
 }
